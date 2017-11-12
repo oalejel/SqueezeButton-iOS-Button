@@ -39,7 +39,7 @@ class SqueezeButton: UIButton {
     func rescaleButton() {
         if completedSqueeze {
             UIView.animateKeyframes(withDuration: 0.2, delay: 0.0, options: .calculationModeCubic, animations: { () -> Void in
-                self.transform.scaledBy(x: 1/0.09, y: 1/0.09)
+                self.transform = self.transform.scaledBy(x: 1/0.9, y: 1/0.9)
             }) { (done) -> Void in
                 
             }
@@ -48,4 +48,5 @@ class SqueezeButton: UIButton {
         }
     }
 }
+
 
