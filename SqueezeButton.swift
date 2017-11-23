@@ -23,6 +23,11 @@ class SqueezeButton: UIButton {
         rescaleButton()
     }
     
+    override func touchesCancelled(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super.touchesEnded(touches, with: event)
+        rescaleButton()
+    }
+    
     func press() {
         UIView.animateKeyframes(withDuration: 0.1, delay: 0.0, options: .calculationModeCubic, animations: { () -> Void in
             self.completedSqueeze = false
