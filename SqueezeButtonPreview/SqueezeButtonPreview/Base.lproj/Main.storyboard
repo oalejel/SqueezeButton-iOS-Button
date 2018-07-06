@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -78,28 +79,43 @@
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lZJ-hq-1GC" customClass="SqueezeButton" customModule="SqueezeButtonPreview" customModuleProvider="target">
+                                <rect key="frame" x="27" y="581" width="321" height="54"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="31"/>
+                                <state key="normal" title="Gradient">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="yW3-XZ-N3D" firstAttribute="centerY" secondItem="edI-ic-1WC" secondAttribute="centerY" id="7L3-9d-2Jf"/>
                             <constraint firstItem="p5N-RA-m5b" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="CUY-bV-RXH"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="lZJ-hq-1GC" secondAttribute="trailing" constant="11" id="GbZ-97-fIj"/>
                             <constraint firstAttribute="trailing" secondItem="yW3-XZ-N3D" secondAttribute="trailing" constant="27" id="NDN-zu-Ek7"/>
                             <constraint firstItem="edI-ic-1WC" firstAttribute="leading" secondItem="fRD-pk-V9v" secondAttribute="trailing" constant="21" id="OSj-qj-zz9"/>
                             <constraint firstItem="edI-ic-1WC" firstAttribute="width" secondItem="fRD-pk-V9v" secondAttribute="width" id="PtI-5k-TZW"/>
+                            <constraint firstItem="lZJ-hq-1GC" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="11" id="WG6-eh-zbg"/>
                             <constraint firstItem="yW3-XZ-N3D" firstAttribute="leading" secondItem="edI-ic-1WC" secondAttribute="trailing" constant="21" id="WSg-7c-Bwj"/>
                             <constraint firstItem="edI-ic-1WC" firstAttribute="centerY" secondItem="fRD-pk-V9v" secondAttribute="centerY" id="dGa-2p-z0H"/>
                             <constraint firstItem="IIr-iJ-RxW" firstAttribute="top" secondItem="p5N-RA-m5b" secondAttribute="bottom" constant="35" id="g3X-Si-aLb"/>
                             <constraint firstItem="p5N-RA-m5b" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="35" id="lfn-HU-eFx"/>
+                            <constraint firstItem="lZJ-hq-1GC" firstAttribute="top" secondItem="edI-ic-1WC" secondAttribute="bottom" constant="30" id="oMO-LK-BpT"/>
                             <constraint firstItem="yW3-XZ-N3D" firstAttribute="width" secondItem="edI-ic-1WC" secondAttribute="width" id="uGC-Du-4Sc"/>
                             <constraint firstItem="IIr-iJ-RxW" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="vdt-3s-goC"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="lZJ-hq-1GC" secondAttribute="bottom" constant="32" id="x0N-Fk-jdL"/>
                             <constraint firstItem="fRD-pk-V9v" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="27" id="yAC-4S-iyg"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="edI-ic-1WC" secondAttribute="bottom" constant="116" id="zuL-5u-xdu"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="gradientButton" destination="lZJ-hq-1GC" id="PzS-UH-v4F"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="221" y="310"/>
+            <point key="canvasLocation" x="220" y="309.89505247376314"/>
         </scene>
     </scenes>
 </document>

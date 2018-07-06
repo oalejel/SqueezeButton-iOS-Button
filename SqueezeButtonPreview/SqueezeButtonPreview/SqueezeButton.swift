@@ -1,3 +1,4 @@
+
 //
 //  SqueezeButton.swift
 //  Expense Tracker
@@ -18,22 +19,48 @@ import UIKit
  g2?.delaysTouchesBegan = false
  */
 
-class SqueezeButton: UIButton {
+@IBDesignable class SqueezeButton: UIButton {
     var completedSqueeze = true
     var pendingOut = false
-    static let defaultCornerRadius: CGFloat = 10
+    @IBInspectable var defaultCornerRadius: CGFloat = 10 {
+        didSet {
+            layer.cornerRadius = defaultCornerRadius
+        }
+    } // can be set in interface builder
+    
+    // for gradient purposes
+    var firstLayoutComplete = false
+    var pendingGradient = false
+    var drawGradientClosure: (() -> ())?
+    
     
     //setup corner radius and mask to bounds to prevent corners from being shown
     override init(frame: CGRect) {
         super.init(frame: frame)
-        layer.cornerRadius = SqueezeButton.defaultCornerRadius
+        layer.cornerRadius = defaultCornerRadius
         layer.masksToBounds = true
     }
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        layer.cornerRadius = SqueezeButton.defaultCornerRadius
+        layer.cornerRadius = defaultCornerRadius
         layer.masksToBounds = true
+    }
+    
+    convenience init(frame: CGRect, cornerRadius: CGFloat) {
+        self.init(frame: frame)
+        layer.cornerRadius = cornerRadius
+    }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        if !firstLayoutComplete {
+            firstLayoutComplete = true
+            if pendingGradient, let gc = drawGradientClosure {
+                gc()
+                pendingGradient = false
+            }
+        }
     }
     
     //react to touches with a press or rescale animation
@@ -72,6 +99,31 @@ class SqueezeButton: UIButton {
         } else {
             pendingOut = true
         }
+    }
+    
+    /// adds a gradient layer to the button
+    /// - note: It is okay to call this method before or after the button is drawn to the screen
+    func addGradient(startColor: UIColor, endColor: UIColor, angle: CGFloat) {
+        // if things have already been shown and frame size is set, we immediately add the gradient
+        if firstLayoutComplete {
+            drawGradient(startColor: startColor, endColor: endColor, angle: angle)
+        } else {
+            // else, we prepare for a future drawing of the gradient
+            pendingGradient = true
+            drawGradientClosure = { [weak self, a = startColor, b = endColor, c = angle] in
+                self?.drawGradient(startColor: a, endColor: b, angle: c)
+            }
+        }
+    }
+    
+    private func drawGradient(startColor: UIColor, endColor: UIColor, angle: CGFloat) {
+        let gradient = CAGradientLayer()
+        gradient.colors = [startColor.cgColor, endColor.cgColor]
+        gradient.startPoint = CGPoint(x: 0.5 + -0.5 * sin(angle), y: 0.5 + -0.5 * cos(angle))
+        gradient.endPoint = CGPoint(x: 0.5 + 0.5 * sin(angle), y: 0.5 + 0.5 * cos(angle))
+        gradient.frame = frame
+        gradient.frame.origin = .zero
+        layer.insertSublayer(gradient, at: 0)
     }
 }
 

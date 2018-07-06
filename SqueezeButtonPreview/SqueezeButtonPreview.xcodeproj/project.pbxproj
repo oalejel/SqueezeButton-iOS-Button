@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3D05EAC020AB9C0500C5E384 /* Rectangle.png in Resources */ = {isa = PBXBuildFile; fileRef = 3D05EABF20AB9C0500C5E384 /* Rectangle.png */; };
 		3DE859351C2D78E900E9881C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE859341C2D78E900E9881C /* AppDelegate.swift */; };
 		3DE859371C2D78E900E9881C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE859361C2D78E900E9881C /* ViewController.swift */; };
 		3DE8593A1C2D78E900E9881C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3DE859381C2D78E900E9881C /* Main.storyboard */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3D05EABF20AB9C0500C5E384 /* Rectangle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Rectangle.png; sourceTree = "<group>"; };
 		3DE859311C2D78E900E9881C /* SqueezeButtonPreview.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SqueezeButtonPreview.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3DE859341C2D78E900E9881C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3DE859361C2D78E900E9881C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -59,6 +61,7 @@
 				3DE859341C2D78E900E9881C /* AppDelegate.swift */,
 				3DE859461C2D790600E9881C /* SqueezeButton.swift */,
 				3DE859361C2D78E900E9881C /* ViewController.swift */,
+				3D05EABF20AB9C0500C5E384 /* Rectangle.png */,
 				3DE859381C2D78E900E9881C /* Main.storyboard */,
 				3DE8593B1C2D78EA00E9881C /* Assets.xcassets */,
 				3DE8593D1C2D78EA00E9881C /* LaunchScreen.storyboard */,
@@ -127,6 +130,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3DE8593F1C2D78EA00E9881C /* LaunchScreen.storyboard in Resources */,
+				3D05EAC020AB9C0500C5E384 /* Rectangle.png in Resources */,
 				3DE8593C1C2D78EA00E9881C /* Assets.xcassets in Resources */,
 				3DE8593A1C2D78E900E9881C /* Main.storyboard in Resources */,
 			);
